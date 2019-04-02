@@ -37,7 +37,6 @@
     .right-0 {right: 0;}
     .display-6 {font-size: 2rem;}
 
-    .full-height {height: auto;}
     .logo{ height: 150px;}
     .logo img{ height: 100%; width: auto; } 
     .fill-grad-start {stop-color: #dddeff;}
@@ -60,39 +59,25 @@
 */
 
 @media (min-width: 1024px) {
+    .full-height{height: calc(100vh - 112px);}
     .display-xl-4 {font-size: 3.5rem;}
     .d-lg-block {display: block !important;}
     .datenum{font-size: 42px;}
     footer{padding: 44px 25px}
 }
 
-/* 
-  ##Device = Tablets, Ipads (landscape)
-  ##Screen = B/w 768px to 1024px
-*/
-
 @media (min-width: 680px) and (max-width: 1280px) and (orientation: landscape) {
     .logo {height: 100px;margin-top: 20px}
     #countdown{margin-bottom: 150px}
     .display-xl-4 {font-size: 2.5rem;}
-    .full-height {height: 100%;}
+    .full-height {height: auto;}
 }
-
-/* 
-  ##Device = Low Resolution Tablets, Mobiles (Landscape)
-  ##Screen = B/w 481px to 767px
-*/
 
 @media (min-width: 481px) and (max-width: 767px) {
   
-  //CSS
+  .full-height {height: auto}
   
 }
-
-/* 
-  ##Device = Most of the Smartphones Mobiles (Portrait)
-  ##Screen = B/w 320px to 479px
-*/
 
 @media (min-width: 320px) and (max-width: 480px) {
     .logo {height: 100px;}
@@ -102,16 +87,17 @@
     footer li{width: 50%;text-align: left}
     footer li a{display: list-item}
     .pb-5{padding-bottom:.7rem !important}
+    .full-height {height: 100%;}
 }
 </style>      
   </head>
 
-  <body>
+<body>
 <section class="p-0 position-relative ">
 		<div class="container-fluid d-flex h-100 w-100 p-0">
 			<div class="row justify-content-between align-items-center w-100 m-0">
 				<!-- banner image -->
-				<div class="col-md-5 d-md-block p-0">
+				<div class="col-md-5 d-md-block p-0 full-height">
 					<figure class="w-100 ie-height-900">
 						<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 900 650" style="enable-background:new 0 0 881.8 917.9;" xml:space="preserve">
                             <circle fill="#dddeff" cx="147.5" cy="100" r="400"></circle>
@@ -127,7 +113,7 @@
 					</figure>
 				</div>
 				<!-- banner Content -->
-				<div class="col-md-7 offset-lg-1 col-lg-5 mt-0 mt-md-0 mr-auto">
+				<div class="col-md-7 offset-lg-1 col-lg-5 mr-auto full-height">
 					<figure class="logo pb-5 mp">
 						<img src="assets/img/alsoft-logo.png">
 					</figure>
@@ -137,7 +123,6 @@
                         <p>Thank you for your patience.</p>
                     </div>
 					<h5 class="mp">We are coming back in....</h5>
-
                     <div id="countdown" class="mp"></div>
 				</div>
 
