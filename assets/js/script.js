@@ -1,5 +1,8 @@
+jQuery(window).load(function() {
+    $(".sk-folding-cube").fadeOut();
+    $(".preloader").delay(1000).fadeOut("slow");
+});
 jQuery(document).ready(function($){
-    $('.preloader').delay(200).fadeOut(600);
     $('.m-headline .letters').each(function(){
       $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
     });
