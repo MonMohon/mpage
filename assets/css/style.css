@@ -52,6 +52,30 @@
     top: 0;
     left: 0;
 }
+.svg-img{position: relative}
+.svg-bg {
+    position: absolute;
+    z-index: -1;
+}
+#gear {
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+}
+#gear{
+    animation-name: spin;
+    animation-duration: 15.5s;
+    animation-iteration-count: infinite;
+    transform-origin: 50% 50%;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 .preloader .sk-folding-cube {
     position: absolute;
     top: 50%;
@@ -134,12 +158,20 @@
 .message {
     font-size: 32px;
 }
-.main-img{width:70%;height:auto;top:25%;left:30%}
+.main-img {
+    width: 70%;
+    height: auto;
+    top: 20%;
+    left: 20%;
+}
+.main-image{position: relative;overflow-x: hidden}
 @media (min-width: 1024px) {
     .display-xl-4 {font-size: 3.5rem;}
     .d-lg-block {display: block !important;}
     .datenum{font-size: 42px;}
     footer{padding: 44px 25px}
+    #Layer_2 {width: 100%;}
+    .svg-bg{right: 0;bottom: 250px;}
 }
 @media (min-width: 800px) and (max-width: 1280px) and (orientation: landscape) {
     .logo {height: 100px;margin-top: 20px}
@@ -162,6 +194,8 @@
     footer li{width: 50%;text-align: left}
     footer li a{display: list-item}
     .pb-5{padding-bottom:.7rem !important}
-    .main-img{left:15%}
+    .main-img{left:15%;}
+    #Layer_2 {width: 70%;}
+}
     
 }
