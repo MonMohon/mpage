@@ -3,6 +3,10 @@ jQuery(window).load(function() {
     $(".loader").delay(1000).fadeOut("slow");
 });
 jQuery(document).ready(function($){
+  $( ".menu-toggle" ).click(function() {
+    $(".menu-line").toggleClass('open');
+    $(".overlay").toggle();
+  });  
     $('.subtitle-top .letters').each(function(){
       $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
     });
@@ -28,11 +32,11 @@ jQuery(document).ready(function($){
         return Math.floor(Math.random()*(max-min+1)+min);
     }
     if (typeof countdown === "undefined"){
-        finalDate = new Date(d.getFullYear(), d.getMonth(), d.getDate(), d.getHours(), d.getMinutes()+randomNumber, d.getSeconds()).toUTCString();    
+        finalDate = new Date(d.getFullYear(), d.getMonth(), d.getDate(), d.getHours(), d.getMinutes()+randomNumber, d.getSeconds()).toUTCString();
         Cookies.set('countdown', { datetime: finalDate});
     }else{
         countdown=$.parseJSON(countdown);
-        finalDate = countdown.datetime;    
+        finalDate = countdown.datetime;
     }
 
     const timer = new TimezZ("#countdown", {
@@ -46,8 +50,8 @@ jQuery(document).ready(function($){
       template: '<span class="datenum">NUMBER</span><span class="datetxt">LETTER</span>',
       finished() {
         randomNumber = randomNumberFromRange(30, 70);
-        finalDate = new Date(d.getFullYear(), d.getMonth(), d.getDate(), d.getHours(), d.getMinutes()+randomNumber, d.getSeconds()).toUTCString();    
-        Cookies.set('countdown', { datetime: finalDate});      
+        finalDate = new Date(d.getFullYear(), d.getMonth(), d.getDate(), d.getHours(), d.getMinutes()+randomNumber, d.getSeconds()).toUTCString();
+        Cookies.set('countdown', { datetime: finalDate});
         location.reload();
       }
     });
